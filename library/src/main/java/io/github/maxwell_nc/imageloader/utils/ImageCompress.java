@@ -59,9 +59,8 @@ public class ImageCompress {
         calculateSampleSize(height, width, viewHeight, viewWidth, options);
 
         if (imageStream != null) {
-            Bitmap bitmap = BitmapFactory.decodeStream(imageStream, null, options);
-            return bitmap;
-        }else {
+            return BitmapFactory.decodeStream(imageStream, null, options);
+        } else {
             return null;
         }
 
@@ -71,14 +70,13 @@ public class ImageCompress {
         // 默认不缩放
         int compressSampleSize = 1;
 
-        if (height > 0 && width > 0) {//防止图片大小为0x0
+        if (height > 0 && width > 0 && viewHeight > 0 && viewWidth > 0) {//防止为0x0
             // 根据长宽计算最佳采样大小
             if (height > viewHeight || width > viewWidth) {
                 int heightRadio = height / viewHeight;
                 int widthRadio = width / viewWidth;
 
-                compressSampleSize = heightRadio > widthRadio ? heightRadio
-                        : widthRadio;
+                compressSampleSize = heightRadio > widthRadio ? heightRadio : widthRadio;
             }
         }
 
