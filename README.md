@@ -1,7 +1,7 @@
 # Introduction
 ImageLoader is a async load image framework with auto cache and compress.
 
-##Feature
+## Feature
 - Multi Image Type Support: Raw,Assert,Content Provider,Local File,WebImage,etc.
 - Auto compress Image.
 - Auto cache in memory and disk.
@@ -10,7 +10,7 @@ ImageLoader is a async load image framework with auto cache and compress.
 - Custom Load framework,use your custom library to load img,such as okHttp.
 - Builder Design Mode.
 
-##Dependency
+## Dependency
 
 Add it in your root build.gradle at the end of repositories:
 ```groovy
@@ -27,13 +27,13 @@ Add the dependency：
 	        compile 'com.github.maxwell-nc:ImageLoader:v1.0'
 	}
 ```
-##Show Log：
+## Show Log：
 
 ```java
 	ImageLoader.log();
 ```
 
-##Sample：
+## Sample：
 
 ```java
 	ImageLoader.createTask().web("cdn-img.easyicon.net/image/mix.png").into(imageView).start();
@@ -56,7 +56,7 @@ Other Type:
 ```
 
 
-##Cache control：
+## Cache control：
 
 ```java
    ImageLoader.clearMemCache(80);//trim to 80%
@@ -68,7 +68,7 @@ Other Type:
 ```
 
 
-##Callback：
+## Callback：
 
 ```java
     ImageLoader.createTask().web("cdn-img.easyicon.net/image/mix.png")
@@ -89,7 +89,7 @@ Other Type:
 ```
 
 
-##Set Loading and Failed Resource：
+## Set Loading and Failed Resource：
 
 ```java
    ImageLoader.createTask().web("cdn-img.easyicon.net/image/mix.png")
@@ -98,7 +98,7 @@ Other Type:
            .into(imageView).start();
 ```
 
-##Custom Load framework：
+## Custom Load framework：
 
 a simple sample for custom network load framework:
 ```java
@@ -118,7 +118,7 @@ a simple sample for custom network load framework:
                 .into(imageView).start();
 ```
 
-##TODO：
+## TODO：
 
 - bind context lifecycle
 - cancel load
@@ -127,4 +127,4 @@ a simple sample for custom network load framework:
 - add code comment
 - may with sync return
 
-##See more on app demo
+## See more on app demo
