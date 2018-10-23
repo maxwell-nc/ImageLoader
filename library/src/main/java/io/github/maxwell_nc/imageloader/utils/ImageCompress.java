@@ -70,12 +70,17 @@ public class ImageCompress {
         // 默认不缩放
         int compressSampleSize = 1;
 
-        if (height > 0 && width > 0 && viewHeight > 0 && viewWidth > 0) {//防止为0x0
+        if (height > 0 && width > 0) {//防止为0x0
             // 根据长宽计算最佳采样大小
             if (height > viewHeight || width > viewWidth) {
-                int heightRadio = height / viewHeight;
-                int widthRadio = width / viewWidth;
-
+                int heightRadio = 1;
+                int widthRadio = 1;
+                if (viewHeight > 0) {
+                    heightRadio = height / viewHeight;
+                }
+                if (viewWidth > 0) {
+                    widthRadio = width / viewWidth;
+                }
                 compressSampleSize = heightRadio > widthRadio ? heightRadio : widthRadio;
             }
         }
